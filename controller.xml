@@ -1,18 +1,365 @@
-<?xml version="1.0" encoding="windows-1251"?>
-<options>
-    <com_on value="0"/>
-    <lan_on value="0"/>
-    <comp_number value="2"/>
-    <comdrv1form left="558" top="186" width="738" height="655"/>
-    <comdrv2form left="277" top="182" width="767" height="658"/>
-    <comdrv3form left="225" top="414"/>
-    <comdrv5form left="229" top="575"/>
-    <showmodesform left="2342" top="113" width="292" height="290"/>
-    <messform left="284" top="343" width="886" height="320" last_message="1" show_window="0" alarm_message="1" prealarm_message="1" sound_alarm_type="0"/>
-    <filters filter1="1" filter2="1" filter3="1" filter4="1" filter5="0"/>
-    <desktop enlarge_to_desktop="0" monitor="0"/>
-    <mnemo_editor show_wrong_size="1" show_small_monitor_frame="0" row_count="10"/>
-    <abonent_to_show value="1"/>
-    <main_setup day_gr_report_type="1" control_active_state="1"/>
-    <mnemo_setup width="1920" height="1080"/>
-</options>
+<?xml version="1.0" encoding="Windows-1251"?>
+<controller name="ШУК-ЭК16.6" description="Шкаф управления котлом ТГМЕ-464 ст.№11" address="192.168.100.100" address2="192.168.101.100">
+    <modules stat="%MB68" ainStat="%MB500">
+<!-- ряд 1 -->
+        <module col="1" row="1" type="CP6711">
+            <param name="IN1" channel="1" description="Факел в топке-1" />
+            <param name="IN2" channel="2" description="Факел в топке-2" />
+            <param name="IN3" channel="3" description="Резерв" />
+    	</module>
+    	<module col="2" row="1" type="CP6711">
+            <param name="IN4" channel="1" description="Снижение нагрузки (канал 1)" />
+            <param name="IN5" channel="2" description="Наличие давления газа перед блоками" />
+            <param name="IN6" channel="3" description="Отключение горелок защитой, действующей на прекращение подачи газа (канал 1)" />
+    	</module>
+    	<module col="3" row="1" type="CP6711">
+            <param name="IN7" channel="1" description="Снижение нагрузки (канал 2, резервирующий)" />
+            <param name="IN8" channel="2" description="Резерв" />
+            <param name="IN9" channel="3" description="Отключение горелок защитой, действующей на прекращение подачи газа (канал 2, резервирующий)" />
+    	</module>
+    	<module col="4" row="1" type="CP6711">
+            <param name="IN10" channel="1" description="Нет напряжения ~220В основного ввода" />
+            <param name="IN11" channel="2" description="Нет напряжения ~220В резервного ввода" />
+            <param name="IN12" channel="3" description="Вызов к шкафу электропитания" />
+    	</module>
+    	<module col="5" row="1" type="CP6711">
+            <param name="IN13" channel="1" description="ДВ отключен" />
+            <param name="IN14" channel="2" description="ДВ включен" />
+            <param name="IN15" channel="3" description="ДРГ включен" />
+    	</module>
+    	<module col="6" row="1" type="CP6711">
+            <param name="IN16" channel="1" description="НА ДВ открыт более 25%" />
+            <param name="IN17" channel="2" description="НА ДРГ открыт более 25%" />
+            <param name="IN18" channel="3" description="Резерв" />
+    	</module>
+    	<module col="7" row="1" type="CP6711">
+            <param name="IN19" channel="1" description="Резерв" />
+            <param name="IN20" channel="2" description="Резерв" />
+            <param name="IN21" channel="3" description="Резерв" />
+    	</module>
+    	<module col="8" row="1" type="CP6711">
+            <param name="IN22" channel="1" description="Резерв" />
+            <param name="IN23" channel="2" description="Резерв" />
+            <param name="IN24" channel="3" description="Резерв" />
+    	</module>
+    	<module col="1" row="21" type="CP6732">
+            <param name="AST1" channel="1" description="Температура газа" var="Tgas" type="50М" />
+    	</module>
+<!-- ряд 2 -->
+    	<module col="2" row="1" type="CP6725">
+            <param name="OUT1" channel="1" description="Невоспламенение первоначальной или останов всех горелок при растопке на газе" />
+            <param name="OUT2" channel="2" description="Защита по факелу введена" />
+    	</module>
+    	<module col="2" row="2" type="CP6725">
+            <param name="OUT3" channel="1" description="Разрешение открытия входной задвижки мазута (все вентили горелок закрыты)" />
+            <param name="OUT4" channel="2" description="Разрешение открытия входного затвора газа" />
+    	</module>
+    	<module col="2" row="3" type="CP6725">
+            <param name="OUT5" channel="1" description="Входной затвор газа - открыть" />
+            <param name="OUT6" channel="2" description="Входной затвор газа - закрыть" />
+    	</module>
+    	<module col="2" row="4" type="CP6725">
+            <param name="OUT7" channel="1" description="Входной затвор газа - стоп" />
+            <param name="OUT8" channel="2" description="ГРГ горелок №1, №2 - открыть" />
+    	</module>
+    	<module col="2" row="5" type="CP6725">
+            <param name="OUT9" channel="1" description="ГРГ горелок №1, №2 - закрыть" />
+            <param name="OUT10" channel="2" description="ГРГ горелок №1, №2 - стоп" />
+    	</module>
+    	<module col="2" row="6" type="CP6725">
+            <param name="OUT11" channel="1" description="ГРГ горелок №3, №4 - открыть" />
+            <param name="OUT12" channel="2" description="ГРГ горелок №3, №4 - закрыть" />
+    	</module>
+    	<module col="2" row="7" type="CP6725">
+            <param name="OUT13" channel="1" description="ГРГ горелок №3, №4 - стоп" />
+            <param name="OUT14" channel="2" description="ГРГ горелок №5, №6 - открыть" />
+    	</module>
+    	<module col="2" row="8" type="CP6725">
+            <param name="OUT15" channel="1" description="ГРГ горелок №5, №6 - закрыть" />
+            <param name="OUT16" channel="2" description="ГРГ горелок №5, №6 - стоп" />
+    	</module>
+    	<module col="2" row="9" type="CP6725">
+            <param name="OUT17" channel="1" description="ГРГ горелок №7, №8 - открыть" />
+            <param name="OUT18" channel="2" description="ГРГ горелок №7, №8 - закрыть" />
+    	</module>
+    	<module col="2" row="10" type="CP6725">
+            <param name="OUT19" channel="1" description="ГРГ горелок №7, №8 - стоп" />
+            <param name="OUT20" channel="2" description="Отключились все ПЗК горелок" />
+    	</module>
+    	<module col="2" row="11" type="CP6725">
+            <param name="OUT21" channel="1" description="Проводится вентиляция" />
+            <param name="OUT22" channel="2" description="Вентиляция проведена" />
+    	</module>
+    	<module col="2" row="12" type="CP6725">
+            <param name="OUT23" channel="1" description="Резерв" />
+            <param name="OUT24" channel="2" description="Резерв" />
+    	</module>
+    	<module col="2" row="13" type="CP6725">
+            <param name="OUT25" channel="1" description="Резерв" />
+            <param name="OUT26" channel="2" description="Резерв" />
+    	</module>
+    	<module col="2" row="14" type="CP6725">
+            <param name="OUT27" channel="1" description="Резерв" />
+            <param name="OUT28" channel="2" description="Резерв" />
+    	</module>
+    	<module col="2" row="19" type="CP6761" />
+    	<module col="2" row="20" type="CP6761" />
+    	<module col="2" row="21" type="CP6761" />
+    	<module col="2" row="22" type="CP6761" />
+<!-- ряд 3 -->
+    	<module col="3" row="2" type="CP6731">
+            <param name="AIN1" value="%MDc0" channel="1" description="Резерв" min="%QD8" max="%QD12" type="%QX4.0"/>
+            <param name="AIN2" channel="2" description="Резерв" min="%QD16" max="%QD20" type="%QX4.1"/>
+    	</module>
+    	<module col="3" row="3" type="CP6731">
+            <param name="AIN3" channel="1" description="Резерв" min="%QD24" max="%QD28" type="%QX4.2"/>
+            <param name="AIN4" channel="2" description="Резерв" min="%QD32" max="%QD36" type="%QX4.3"/>
+    	</module>
+    	<module col="3" row="4" type="CP6731">
+            <param name="AIN5" channel="1" description="Резерв" min="%QD40" max="%QD44" type="%QX4.4"/>
+            <param name="AIN6" channel="2" description="Резерв" min="%QD48" max="%QD52" type="%QX4.5"/>
+    	</module>
+    	<module col="3" row="5" type="CP6731">
+            <param name="AIN7" channel="1" description="Резерв" min="%QD56" max="%QD60" type="%QX4.6"/>
+            <param name="AIN8" channel="2" description="Резерв" min="%QD64" max="%QD68" type="%QX4.7"/>
+    	</module>
+    	<module col="3" row="6" type="CP6731">
+            <param name="AIN9" channel="1" description="Резерв" min="%QD72" max="%QD76" type="%QX5.0"/>
+            <param name="AIN10" channel="2" description="Резерв" min="%QD80" max="%QD84" type="%QX5.1"/>
+    	</module>
+    	<module col="3" row="7" type="CP6731">
+            <param name="AIN11" channel="1" description="Давление газа после общей регулирующей заслонки" min="%QD88" max="%QD92" type="%QX5.2"/>
+            <param name="AIN12" channel="2" description="Положение регулирующей заслонки газа перед котлом" min="0" max="100" minOffset="%QW96" maxOffset="%QW100" />
+    	</module>
+    	<module col="3" row="8" type="CP6731">
+            <param name="AIN13" channel="1" description="Расход газа на котёл основной (большой)" min="%QD104" max="%QD108" type="%QX5.4"/>
+            <param name="AIN14" channel="2" description="Расход газа на котёл растопочный (малый)" min="%QD112" max="%QD116" type="%QX5.5"/>
+    	</module>
+    	<module col="3" row="9" type="CP6731">
+            <param name="AIN15" channel="1" description="Перепад давлений воздуха перед котлом и давлением в топке" min="%QD120" max="%QD124" type="%QX5.6"/>
+            <param name="AIN16" channel="2" description="Давление газа перед ПРЗ котла" min="%QD128" max="%QD132" type="%QX5.7"/>
+    	</module>
+    	<module col="3" row="10" type="CP6731">
+            <param name="AIN17" channel="1" description="Напряжение после АВР питания системы АМАКС" min="%QD136" max="%QD140" type="%QX6.0"/>
+            <param name="AIN18" channel="2" description="Резерв" min="%QD144" max="%QD148" type="%QX6.1"/>
+    	</module>
+    	<module col="3" row="11" type="CP6731">
+            <param name="AIN19" channel="1" description="Резерв" min="%QD152" max="%QD156" type="%QX6.2"/>
+            <param name="AIN20" channel="2" description="Резерв" min="%QD160" max="%QD164" type="%QX6.3"/>
+    	</module>
+    	<module col="3" row="15" description="ШГУ-1 Горелки №8" type="CP6751" />
+    	<module col="3" row="16" description="ШГУ-1 Горелки №7" type="CP6751" />
+    	<module col="3" row="17" description="ШГУ-1 Горелки №6" type="CP6751" />
+    	<module col="3" row="18" description="ШГУ-1 Горелки №5" type="CP6751" />
+    	<module col="3" row="19" description="ШГУ-1 Горелки №4" type="CP6751" />
+    	<module col="3" row="20" description="ШГУ-1 Горелки №3" type="CP6751" />
+    	<module col="3" row="21" description="ШГУ-1 Горелки №2" type="CP6751" />
+    	<module col="3" row="22" description="ШГУ-1 Горелки №1" type="CP6751" />
+<!-- ряд 4 -->
+    	<module col="4" row="1" type="CP6761" />
+    	<module col="4" row="2" type="CP6761" />
+    	<module col="4" row="3" type="CP6761" />
+    	<module col="4" row="4" type="CP6761" />
+    	<module col="4" row="6" type="CP6713" description="Входной затвор газа">
+            <param name="SIN1" channel="1" description="Входной затвор газа не открыт" />
+            <param name="SIN2" channel="2" description="Входной затвор газа не закрыт" />
+            <param name="SIN3" channel="3" description="Входной затвор газа - ход" />
+    	</module>
+    	<module col="4" row="7" type="CP6713" description="ГРГ горелок №1, №2">
+            <param name="SIN4" channel="1" description="ГРГ горелок №1, №2 не открыт" />
+            <param name="SIN5" channel="2" description="ГРГ горелок №1, №2 не закрыт" />
+            <param name="SIN6" channel="3" description="ГРГ горелок №1, №2 - ход" />
+    	</module>
+    	<module col="4" row="8" type="CP6713" description="ГРГ горелок №3, №4">
+            <param name="SIN7" channel="1" description="ГРГ горелок №3, №4 не открыт" />
+            <param name="SIN8" channel="2" description="ГРГ горелок №3, №4 не закрыт" />
+            <param name="SIN9" channel="3" description="ГРГ горелок №3, №4 - ход" />
+    	</module>
+    	<module col="4" row="9" type="CP6713" description="ГРГ горелок №5, №6">
+            <param name="SIN10" channel="1" description="ГРГ горелок №5, №6 не открыт" />
+            <param name="SIN11" channel="2" description="ГРГ горелок №5, №6 не закрыт" />
+            <param name="SIN12" channel="3" description="ГРГ горелок №5, №6 - ход" />
+    	</module>
+    	<module col="4" row="10" type="CP6713" description="ГРГ горелок №7, №8">
+            <param name="SIN13" channel="1" description="ГРГ горелок №7, №8 не открыт" />
+            <param name="SIN14" channel="2" description="ГРГ горелок №7, №8 не закрыт" />
+            <param name="SIN15" channel="3" description="ГРГ горелок №7, №8 - ход" />
+    	</module>
+    	<module col="4" row="11" type="CP6713">
+            <param name="SIN16" channel="1" description="Резерв" />
+            <param name="SIN17" channel="2" description="Резерв" />
+            <param name="SIN18" channel="3" description="Резерв" />
+    	</module>
+    	<module col="4" row="15" description="ШГУ-1 Горелки №8 (резервный канал)" type="CP6751" />
+    	<module col="4" row="16" description="ШГУ-1 Горелки №7 (резервный канал)" type="CP6751" />
+    	<module col="4" row="17" description="ШГУ-1 Горелки №6 (резервный канал)" type="CP6751" />
+    	<module col="4" row="18" description="ШГУ-1 Горелки №5 (резервный канал)" type="CP6751" />
+    	<module col="4" row="19" description="ШГУ-1 Горелки №4 (резервный канал)" type="CP6751" />
+    	<module col="4" row="20" description="ШГУ-1 Горелки №3 (резервный канал)" type="CP6751" />
+    	<module col="4" row="21" description="ШГУ-1 Горелки №2 (резервный канал)" type="CP6751" />
+    	<module col="4" row="22" description="ШГУ-1 Горелки №1 (резервный канал)" type="CP6751" />
+    </modules>
+<!--
+    <protections>
+    	<protection name ="ProtPgMin" description="Защита по понижению давления газа" mazut="false"/>
+            <inputs>
+                <param name="In1" value="IN1"/>
+                <param name="In2" value="IN10"/>
+            </inputs>
+        </protection>        
+    </protections>
+-->
+    <regulators>
+    	<regulator name="RegPg" description="Регулятор давления газа">
+            <commands>
+                <param name="cmdAuto" value="%MX16.0"/>
+                <param name="cmdDist" value="%MX16.1"/>
+                <param name="cmdUp" value="%MX16.2"/>
+                <param name="cmdDn" value="%MX16.3"/>
+            </commands>
+            <pulse name="Task" value="%QD128" min="AIN1.min" max="AIN1.max" description="Задание">
+               <param name="DemphTime" value="%QD400" min="0" max="30"/>
+            </pulse>
+            <pulse name="Ain1" value="AIN1" ratio="Ratio1" scale="%QD60">    <!-- +-100% -->
+            	<param name="DemphTime" value="%QD400" min="0" max="30"/>
+            	<param name="Ratio1" value="Table1" description="Соотношение 1"/>
+            	<param name="Ratio2" value="Table2" description="Соотношение 2"/>
+            </pulse>
+            <pulse name="Ain2" value="AIN2" scale="%QD64" description="Параметр из таблицы соотношения"/>
+            <pulse name="Ain3" value="AIN3" scale="-100"/>
+            <pulse name="Ain4" value="AIN4" scale="100"/>
+            <param name="Open" value="DIN1" bounce="0.100"/>    <!-- Дребезг, с -->
+            <param name="Close" value="DIN3"/>
+            <param name="Up" value="DOUT1" negate="0"/>
+            <param name="Down" value="DOUT2"/>
+            <param name="Kus" value="%QD100" min="1" max="25.5" description="Коэффициент усиления"/>
+            <param name="Tint" value="%QD104" min="1" max="256" description="Время интегрирования"/>
+            <param name="Kdiff" value="%QD108" min="0.1" max="2.5" description="Коэффициент дифференцирования"/>
+            <param name="Tim" value="%QD112" min="0.1" max="2.5" description="Время хода ИМ"/>
+            <param name="Tmin" value="%QD116" min="1%" max="50%" description="Минимальное время импульса"/>
+            <param name="Tper" value="%QD120" min="%QD256" max="%QD260" description="Период ШИМ"/>
+            <param name="Delta" value="%QD124" min="0" max="10" description="Зона нечувствительности"/>
+            <param name="InvOut" value="%QX132.0" min="0" max="10" description="Включение инверсии выходов"/>
+            <param name="Ratio1" value="Table1"/>
+    	</regulator>
+    </regulators>
+    <valves>
+    	<valve name="Входной затвор газа">
+            <commands>
+                <param name="cmdOpen" value="%MX11.0"/>
+                <param name="cmdClose" value="%MX11.1"/>
+                <param name="cmdStop" value="%MX11.2"/>
+            </commands>
+            <inputs>
+                <param name="NoOpened" value="SIN1"/>
+                <param name="NoClosed" value="SIN2"/>
+                <param name="On" value="SIN3"/>
+            </inputs>
+            <otputs>
+                <param name="Open" value="OUT5"/>
+                <param name="Close" value="OUT6"/>
+                <param name="Stop" value="OUT7"/>
+            </otputs>
+    	</valve>
+    	<valve name="ГРГ горелок №1, №2">
+            <commands>
+                <param name="cmdOpen" value="%MX11.3"/>
+                <param name="cmdClose" value="%MX11.4"/>
+                <param name="cmdStop" value="%MX11.5"/>
+            </commands>
+            <inputs>
+                <param name="NoOpened" value="SIN4"/>
+                <param name="NoClosed" value="SIN5"/>
+                <param name="On" value="SIN6"/>
+            </inputs>
+            <otputs>
+                <param name="Open" value="OUT8"/>
+                <param name="Close" value="OUT9"/>
+                <param name="Stop" value="OUT10"/>
+            </otputs>
+    	</valve>
+    	<valve name="ГРГ горелок №3, №4">
+            <commands>
+                <param name="cmdOpen" value="%MX11.6"/>
+                <param name="cmdClose" value="%MX11.7"/>
+                <param name="cmdStop" value="%MX12.0"/>
+            </commands>
+            <inputs>
+                <param name="NoOpened" value="SIN7"/>
+                <param name="NoClosed" value="SIN8"/>
+                <param name="On" value="SIN9"/>
+            </inputs>
+            <otputs>
+                <param name="Open" value="OUT11"/>
+                <param name="Close" value="OUT12"/>
+                <param name="Stop" value="OUT13"/>
+            </otputs>
+    	</valve>
+    	<valve name="ГРГ горелок №5, №6">
+            <commands>
+                <param name="cmdOpen" value="%MX12.1"/>
+                <param name="cmdClose" value="%MX12.2"/>
+                <param name="cmdStop" value="%MX12.3"/>
+            </commands>
+            <inputs>
+                <param name="NoOpened" value="SIN10"/>
+                <param name="NoClosed" value="SIN11"/>
+                <param name="On" value="SIN12"/>
+            </inputs>
+            <otputs>
+                <param name="Open" value="OUT14"/>
+                <param name="Close" value="OUT15"/>
+                <param name="Stop" value="OUT16"/>
+            </otputs>
+    	</valve>
+    	<valve name="ГРГ горелок №7, №8">
+            <commands>
+                <param name="cmdOpen" value="%MX12.4"/>
+                <param name="cmdClose" value="%MX12.5"/>
+                <param name="cmdStop" value="%MX12.6"/>
+            </commands>
+            <inputs>
+                <param name="NoOpened" value="SIN13"/>
+                <param name="NoClosed" value="SIN14"/>
+                <param name="On" value="SIN15"/>
+            </inputs>
+            <otputs>
+                <param name="Open" value="OUT17"/>
+                <param name="Close" value="OUT18"/>
+                <param name="Stop" value="OUT19"/>
+            </otputs>
+    	</valve>
+    </valves>
+    <pressureTest>
+	<commands>
+	    <param name="cmdBlockingOn" value="%MX16.7"/>
+	    <param name="cmdBlockingOff" value="%MX16.6"/>
+	    <param name="cmdRun" value="%MX16.5"/>
+	    <param name="cmdCancel" value="%MX16.4"/>
+	    <param name="cmdSkip" value="%MX16.3" />
+	</commands>
+    </pressureTest>
+    <ventilation>
+	<commands>
+	    <param name="cmdBlockingOff" value="%MX17.2"/>
+	    <param name="cmdBlockingOn" value="%MX17.3"/>
+	    <param name="cmdRun" value="%MX17.1"/>
+	    <param name="cmdCancel" value="%MX17.0"/>
+	</commands>
+    </ventilation>
+    <options>
+    	<param name="opt" value="" min="" max="" description=""/>
+    </options>
+    <commands>
+    	<param name="cmd" value="" description="Пуск"/>
+    </commands>
+<!--
+    <tables>
+        <table name="Ratio1" desciption="Первое соотношение газ-воздух">
+            <row data1="1" data2="2"/>
+            <row data1="1" data2="2" data3="3"/>
+            <row data1="1"/>
+        </table>
+    </tables>
+-->
+</controller>
