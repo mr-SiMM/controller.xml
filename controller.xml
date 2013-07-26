@@ -108,7 +108,7 @@
     	<module col="2" row="22" type="CP6761" />
 <!-- ряд 3 -->
     	<module col="3" row="2" type="CP6731">
-            <param name="AIN1" value="%MDc0" channel="1" description="Резерв" min="%QD8" max="%QD12" type="%QX4.0"/>
+            <param name="AIN1" value="%MD0" channel="1" description="Резерв" min="%QD8" max="%QD12" type="%QX4.0"/>
             <param name="AIN2" channel="2" description="Резерв" min="%QD16" max="%QD20" type="%QX4.1"/>
     	</module>
     	<module col="3" row="3" type="CP6731">
@@ -228,8 +228,8 @@
             <pulse name="Ain2" value="AIN2" scale="%QD64" description="Параметр из таблицы соотношения"/>
             <pulse name="Ain3" value="AIN3" scale="-100"/>
             <pulse name="Ain4" value="AIN4" scale="100"/>
-            <param name="Open" value="DIN1" bounce="0.100"/>    <!-- Дребезг, с -->
-            <param name="Close" value="DIN3"/>
+            <param name="Opened" value="DIN1" bounce="0.100"/>    <!-- Дребезг, с -->
+            <param name="Closed" value="DIN3"/>
             <param name="Up" value="DOUT1" negate="0"/>
             <param name="Down" value="DOUT2"/>
             <param name="Kus" value="%QD100" min="1" max="25.5" description="Коэффициент усиления"/>
@@ -239,8 +239,7 @@
             <param name="Tmin" value="%QD116" min="1%" max="50%" description="Минимальное время импульса"/>
             <param name="Tper" value="%QD120" min="%QD256" max="%QD260" description="Период ШИМ"/>
             <param name="Delta" value="%QD124" min="0" max="10" description="Зона нечувствительности"/>
-            <param name="InvOut" value="%QX132.0" min="0" max="10" description="Включение инверсии выходов"/>
-            <param name="Ratio1" value="Table1"/>
+            <param name="InvOut" value="%QX132.0" description="Включение инверсии выходов"/>
     	</regulator>
     </regulators>
     <valves>
