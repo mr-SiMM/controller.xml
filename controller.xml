@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<options>
+    <com_on value="0"/>
+    <lan_on value="0"/>
+    <comp_number value="2"/>
+    <comdrv1form left="558" top="186" width="738" height="655"/>
+    <comdrv2form left="277" top="182" width="767" height="658"/>
+    <comdrv3form left="225" top="414"/>
+    <comdrv5form left="229" top="575"/>
+    <showmodesform left="2342" top="113" width="292" height="290"/>
+    <messform left="284" top="343" width="886" height="320" last_message="1" show_window="0" alarm_message="1" prealarm_message="1" sound_alarm_type="0"/>
+    <filters filter1="1" filter2="1" filter3="1" filter4="1" filter5="0"/>
+    <desktop enlarge_to_desktop="0" monitor="0"/>
+    <mnemo_editor show_wrong_size="1" show_small_monitor_frame="0" row_count="10"/>
+    <abonent_to_show value="1"/>
+    <main_setup day_gr_report_type="1" control_active_state="1"/>
+    <mnemo_setup width="1920" height="1080"/>
+</options>
